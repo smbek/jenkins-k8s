@@ -25,7 +25,7 @@ podTemplate(cloud: 'kubernetes', label: 'docker', yaml: template) {
     node ("docker") {
         container ("docker") {
     stage ("Checkout SCM"){
-       git branch: 'main', url: 'https://github.com/smbek/jenkins-k8s-batch5.git'
+       git branch: 'main', url: 'https://github.com/smbek/jenkins-k8s.git'
     }
     withCredentials([usernamePassword(credentialsId: 'docker-creds', passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER')]) {
     stage ("Docker build") {
